@@ -79,7 +79,6 @@ void print()
 		for (int column = 0; column < FIELD_SIZE; column++)
 		{
 			if (pos[column] == line)
-
 				printf("¡");
 			else
 				printf(" ");
