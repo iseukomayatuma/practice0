@@ -10,6 +10,8 @@ void BubbleSort(int array[], int arraySize);
 int getRandRange(int min, int max);
 void dumpArray(const int array[], int arraySize);
 void print(int array[], int arraysize, int j, int n);
+// 変数宣言
+int swapcnt = 0, cmpcnt = 0;
 // 交換マクロ
 #define swap(type,a,b)	do{type tmp=a; a=b; b=tmp;}while(false)
 
@@ -39,6 +41,8 @@ int main()
 		dumpArray(array, arraySize);
 
 		free(array);
+		printf("比較は%d回でした", cmpcnt);
+		printf("交換は%d回でした", swapcnt);
 	}
 	return 0;
 }
@@ -51,18 +55,22 @@ void BubbleSort(int array[], int arraySize)
 	for (int i = 0; i < arraySize - 1; i++)
 	{
 		printf("パス%d\n ", i + 1);
-		for (int j = arraySize - 1; j > i; j--) {
+		for (int j = arraySize - 1; j > i; j--)
+		{
 
-			for (int n = 0; n < arraySize; n++) {
+			for (int n = 0; n < arraySize; n++) 
+			{
 				print(array, arraySize, j,n);
 			}
 			printf("\n ");
 
-			if (array[j - 1] > array[j]) {
-				swap(int, array[j - 1], array[j]);
+			if (array[j - 1] > array[j]) 
+			{
+				swap(int,array[j - 1], array[j]);
+				swapcnt++;
 			}
+			cmpcnt++;
 		}
-		printf("\n ");
 	}
 }
 
