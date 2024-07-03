@@ -27,6 +27,7 @@ int main()
 		int sample[] = { 9,1,3,4,6,7,8 };
 		int sampleSize = sizeof(sample) / sizeof(sample[0]);
 		SortTest(sample, sampleSize);
+		BubbleSort(sample, sampleSize);
 	}
 	else {
 		int arraySize;
@@ -46,6 +47,7 @@ int main()
 			for (int i = 0; i < arraySize; i++) {
 				array[i] = getRandRange(1, 100);
 			}
+			BubbleSort(array, arraySize);
 			SortTest(array, arraySize);
 			free(array);
 		}
@@ -61,9 +63,29 @@ void SortTest(int array[], int arraySize)
 	printf("昇順にソートしました\n");
 	dumpArray(array, arraySize);
 }
-void BubbleSort(int array[], int arraySize)
+void BubbleSort(int array[], int Size)
 {
-	
+	int n = 0;
+	bool 
+	for (int i = 1; i <= Size; i++)
+	{
+		printf("パス%d\n ", i);
+		i % 2 == 0 ? n = i : n = Size - i;
+		for (int j = 0; j < Size - 1; j++)
+		{
+			for (int m = 0; m < Size - 1; m++)
+			{
+				if (m == n - 1)
+					if (array[m] > array[n])
+						printf("%d +  ", array[m]);
+					else
+						printf("%d -  ", array[m]);
+				else
+				printf("%d    ", array[m]);
+			}
+			printf("\n ");
+		}
+	}
 }
 
 void dumpArray(const int array[], int arraySize)
