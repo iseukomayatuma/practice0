@@ -12,8 +12,10 @@ int main()
 		if (multiply == 10) 
 		{
 			multiplied++; multiply = 1;
+			if(multiplied <= 9)
 			printf("\n%d   |   ", multiplied);
 		}
+		if (multiplied <= 9)
 		printf("%d   ", multiplied * multiply);
 	}
 	return 0;
