@@ -49,11 +49,12 @@ void PrintTriangleLU(int n)
 }
 void PrintTriangleRU(int n)
 {
-	for (int Vertical = 5; Vertical > 0; Vertical--)
+	puts("This is RU");
+	for (int Vertical = n; Vertical > 0; Vertical--)
 	{
-		for (int Horizon = n; Horizon < Vertical;Horizon++)
+		for (int Horizon = 0; Horizon < n; Horizon++)
 		{
-			if (Vertical > Horizon)
+			if (Horizon + Vertical < n)
 			{
 				putchar(' ');
 
@@ -68,6 +69,14 @@ void PrintTriangleRU(int n)
 }
 void PrintTriangleLB(int n)
 {
-	// ここをコーディングしましょう。
-	// 左下側が直角の２等辺三角形
+	puts("This is LB");
+	for (int Horizon = 0,Increase = 1;Horizon < n ;Horizon++)
+	{
+		if (Horizon == Increase)
+		{
+			putchar('\n'); Horizon = 0; Increase++;
+		}
+		putchar('*');
+
+	}
 }
