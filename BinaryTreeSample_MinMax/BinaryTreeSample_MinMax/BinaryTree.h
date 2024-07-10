@@ -1,4 +1,3 @@
-#pragma once
 //=========================================================
 //	２分探索木
 //=========================================================
@@ -23,6 +22,9 @@ bool Remove(BinNode** root, const Member* x);
 void PrintTree(const BinNode* p);
 // 全ノードの削除
 void FreeTree(BinNode* p);
-// 全ノードの表示(降順)
-void PrintTreeReverse(const BinNode* p);
-#endif
+// 最小値ノードを取得
+BinNode* GetMinNode(BinNode* p);
+// 最大値ノードを取得
+BinNode* GetMaxNode(BinNode* p);
+
+#endif // __BinaryTree

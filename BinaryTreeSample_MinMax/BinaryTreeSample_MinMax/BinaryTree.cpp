@@ -98,15 +98,6 @@ void PrintTree(const BinNode* p)
 		PrintTree(p->right);
 	}
 }
-// 全ノードの表示(降順)
-void PrintTreeReverse(const BinNode* p)
-{
-	if (p != nullptr) {
-		PrintTreeReverse(p->right);
-		PrintLnMember(&p->data);
-		PrintTreeReverse(p->left);
-	}
-}
 // 全ノードの削除
 void FreeTree(BinNode* p)
 {
@@ -114,6 +105,25 @@ void FreeTree(BinNode* p)
 		FreeTree(p->left);
 		FreeTree(p->right);
 		free(p);
+	}
+}
+// 最小値ノードを取得
+BinNode* GetMinNode(BinNode* p)
+{
+	if (p != nullptr)
+	{
+		GetMinNode(p->left);
+		return p;
+	}
+}
+// 最大値ノードを取得
+
+BinNode* GetMaxNode(BinNode* p)
+{
+	if (p != nullptr)
+	{
+		GetMaxNode(p->right);
+		return p;
 	}
 }
 
